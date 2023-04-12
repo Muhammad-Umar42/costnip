@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
     return (
         <>
-            <div className='bg-blue-800 '>
+            <div className='bg-[#203d86]'>
                 <div className='w-[78%] mx-[auto] grid grid-cols-1 md:grid-cols-2'>
                     <div>
                         <h1 className='text-white text-[41px] font-black mt-[80px] mb-[20px]'>Never Overpay For Healthcare Again</h1>
@@ -14,20 +14,20 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[50%] mt-[-50px] mx-[auto] bg-white rounded-xl p-[25px]'>
+            <div className='w-[50%] mt-[-50px] mx-[auto] bg-white rounded-xl p-[25px] shadow-lg'>
                 <div className='grid grid-cols-1 md:grid-cols-4'>
                     <div className='flex justify-center items-center border-r-2 border-solid border-gray-600'>
-                        <img className='w-[25px] h-[35px]' src="help.png" alt="doctor" />
+                        <img className='w-[25px] ' src="help.png" alt="doctor" />
                         <select className='pl-[10px] mr-[20px] w-[130px] text-gray-500 text-[18px] '>
                             <option value="Medical">Medical</option>
                         </select>
                     </div>
                     <div className='flex justify-center items-center border-r-2 border-solid border-gray-600'>
-                        <img className='w-[25px] h-[35px] mr-[15px]' src="search.png" alt="icon" />
+                        <img className='w-[25px]  mr-[15px]' src="search.png" alt="icon" />
                         <input className='outline-0' type="text" placeholder='Enter service' />
                     </div>
                     <div className='flex justify-center items-center border-r-2 border-solid border-gray-600'>
-                        <img className='w-[25px] h-[35px] mr-[15px]' src="location.png" alt="icon" />
+                        <img className='w-[25px]  mr-[15px]' src="location.png" alt="icon" />
                         <input className='outline-0' type="text" placeholder='Enter zipcode' />
                     </div>
                     <div className='flex justify-center'>
