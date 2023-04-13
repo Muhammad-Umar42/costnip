@@ -14,7 +14,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[50%] mt-[-50px] mx-[auto] bg-white rounded-xl p-[25px] shadow-lg'>
+            <div className='w-[80%] md:w-[50%] mt-[-50px] mx-[auto] bg-white rounded-xl p-[25px] shadow-lg'>
                 <div className='grid grid-cols-1 md:grid-cols-4'>
                     <div className='flex justify-center items-center border-r-2 border-solid border-gray-600'>
                         <img className='w-[25px] ' src="help.png" alt="doctor" />
