@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <>
             <div className='bg-[#203d86]'>
-                <div className='w-[78%] mx-[auto] grid grid-cols-1 md:grid-cols-2'>
+                <div className='w-[90%] max-w-[1300px] mx-[auto] grid grid-cols-1 md:grid-cols-2'>
                     <div>
                         <h1 className='text-white text-[41px] font-black mt-[80px] mb-[20px]'>Never Overpay For Healthcare Again</h1>
                         <h3 className='text-white text-xl pb-[100px]'>A community-driven healthcare price sharing and comparison platform. Find nearby lower cost options.</h3>
@@ -14,7 +14,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[80%] md:w-[50%] mt-[-50px] mx-[auto] bg-white rounded-xl p-[25px] shadow-lg'>
+            <div className='w-[80%] md:w-[70%] max-w-[1300px] mt-[-50px] mx-[auto] bg-white rounded-xl p-[25px] shadow-lg'>
                 <div className='grid grid-cols-1 md:grid-cols-4'>
                     <div className='flex justify-center items-center border-r-2 border-solid border-gray-600'>
                         <img className='w-[25px] ' src="help.png" alt="doctor" />

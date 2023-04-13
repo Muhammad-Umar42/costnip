@@ -6,7 +6,7 @@ const Price = () => {
             <div className="text-center">
                 <h3 className='pb-10'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, mollitia.</h3>
             </div>
-            <div className="w-[70%] mx-[auto] text-center grid grid-cols-1 gap-y-10 md:grid-cols-3 ">
+            <div className="w-[90%] max-w-[1300px] mx-[auto] text-center grid grid-cols-1 gap-y-10 md:grid-cols-3 ">
                 <div className='text-center'>
                     <h1 className='text-6xl font-black pb-3'>$1000 </h1>
                     <h4 className='text-lg font-semibold'>with a cigna plan </h4>

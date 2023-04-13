@@ -5,6 +5,7 @@ import Price from './price'
 import Lowercost from './lowercost'
 import Chatbox from './chatbox'
 import Constnipvideo from './constnipvideo'
+import Email from './email'
 
 const Index = () => {
     return (
@@ -15,6 +16,7 @@ const Index = () => {
             <Lowercost />
             <Chatbox />
             <Constnipvideo />
+            <Email />
 
         </>
     )
