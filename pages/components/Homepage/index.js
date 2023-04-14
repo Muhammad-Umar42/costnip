@@ -6,6 +6,7 @@ import Lowercost from './lowercost'
 import Chatbox from './chatbox'
 import Constnipvideo from './constnipvideo'
 import Email from './email'
+import Footer from '../footer'
 
 const Index = () => {
     return (
@@ -17,6 +18,7 @@ const Index = () => {
             <Chatbox />
             <Constnipvideo />
             <Email />
+            <Footer />
 
         </>
     )
