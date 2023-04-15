@@ -8,7 +8,7 @@ const Parency = () => {
                 <div className='m-[auto]'>
                     <h1 className='text-[#132758] font-semibold text-xl'>How can you help spread</h1>
                     <h1 className='text-[#15A6C2] font-semibold text-xl'>#Pricepparency</h1>
-                    <button className='bg-[#132758] text-white py-1 px-2 rounded-full mt-6'> About our mission</button>
+                    <button className='bg-[#132758] text-white py-1 px-2 rounded-full mt-6 md:mb-0 mb-8'> About our mission</button>
                 </div>
                 <div className='col-span-2 '>
                     <div className='flex items-center' >

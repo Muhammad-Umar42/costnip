@@ -10,7 +10,7 @@ const Header = () => {
                         <h3 className='text-white text-xl pb-[100px]'>A community-driven healthcare price sharing and comparison platform. Find nearby lower cost options.</h3>
                     </div>
                     <div className='flex items-center justify-center'>
-                        <img className='w-[220px]' src="head-img.png" alt="logo" />
+                        <img className='w-[220px] mb-12 md:mb-0' src="head-img.png" alt="logo" />
                     </div>
                 </div>
             </div>
