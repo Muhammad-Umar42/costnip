@@ -13,7 +13,7 @@ const Footer = () => {
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Discover</li>
-                    <li>Health Spotlight</li>
+                    <li><Link href='/spotlight'>Health Spotlight</Link></li>
                     <li> <Link href='/resource'> Resource Library</Link></li>
                 </ul>
                 <ul className='text-[#132758]'>
@@ -23,13 +23,13 @@ const Footer = () => {
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Company</li>
-                    <li>About Costnip</li>
+                    <li> <Link href="/about"> About Costnip </Link></li>
                     <li>Contact</li>
                 </ul>
             </div>
             <div className="divider w-[97%] mx-[auto] h-[3px] bg-[#132758]"></div>
 
-            <div className='w-[90%] max-w-[1300px] mx-[auto] grid grid-cols-1 md:grid-cols-3'>
+            <div className='w-[90%] max-w-[1300px] mx-[auto] grid grid-cols-1 md:grid-cols-3 gap-y-4'>
                 <div className='text-center'>
                     <img className='w-[100px] mx-[auto]' src="costniplogo.png" alt="logo" />
                     <h2 className='text-[#132758]'>Empowering informed Decisions</h2>

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.clr {
+  color: #132758;
+}
+.countain {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+}
+
 #show {
   display: none;
 }

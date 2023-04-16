@@ -17,7 +17,7 @@ const Navbar = () => {
                                 <Link href='/priceCare'>Pricecare Search</Link>
                             </li>
                             <li>
-                                <Link href='#'>Health Spotlight</Link>
+                                <Link href='/spotlight'>Health Spotlight</Link>
                             </li>
                             <li>
                                 <Link href='#'>Sign in</Link>
