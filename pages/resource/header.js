@@ -12,8 +12,9 @@ const Header = () => {
 
                     <h1 className='text-lg'> Let Costnip direct you to available <span className='font-semibold text-xl'>options</span> ,no matter your need. </h1>
                 </div>
-                <div>
+                <div className='text-center'>
                     <img className='w-[200px] mx-[auto]' src="resource.png" alt="image" />
+                    <button className='text-2xl bg-[#f8f8f8] px-8 py-3 w-2/4 mt-8'>View All Resources</button>
                 </div>
             </div>
         </>

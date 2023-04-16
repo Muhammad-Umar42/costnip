@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
@@ -7,13 +8,13 @@ const Footer = () => {
             <div className='w-[90%] max-w-[1300px] mx-[auto] grid grid-cols-1 md:grid-cols-4'>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Tools & info</li>
-                    <li>Pricecare Search</li>
+                    <li>  <Link href='/priceCare'>Pricecare Search</Link></li>
                     <li>Bill Upload</li>
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Discover</li>
                     <li>Health Spotlight</li>
-                    <li>Resource Library</li>
+                    <li> <Link href='/resource'> Resource Library</Link></li>
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Support</li>
