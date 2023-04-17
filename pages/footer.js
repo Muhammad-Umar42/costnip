@@ -24,7 +24,7 @@ const Footer = () => {
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Company</li>
                     <li> <Link href="/about"> About Costnip </Link></li>
-                    <li>Contact</li>
+                    <li> <Link href="/contact">Contact </Link> </li>
                 </ul>
             </div>
             <div className="divider w-[97%] mx-[auto] h-[3px] bg-[#132758]"></div>
