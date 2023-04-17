@@ -18,7 +18,7 @@ const Footer = () => {
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Support</li>
-                    <li>FAQs</li>
+                    <li> <Link href="/faq">FAQs</Link> </li>
                     <li>Partnerships</li>
                 </ul>
                 <ul className='text-[#132758]'>
