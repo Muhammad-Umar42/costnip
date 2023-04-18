@@ -18,9 +18,11 @@ const Tabs = () => {
                             </Tab.List>
                             <Tab.Panels className='col-span-2'>
                                 <Tab.Panel className=''>
-                                    <div className='bg-white rounded-lg p-4 flex mb-3'>
-                                        <div className='m-[auto]'>
-                                            <img src="tab.png" alt="" />
+                                    <h1 className='font-bold text-xl'>Tab1</h1>
+                                    <div className="divider"></div>
+                                    <div className='bg-white rounded-lg p-4 md:flex block mb-3'>
+                                        <div className='m-[auto]' >
+                                            <img className='m-[auto] md:pb-0 pb-3' src="tab.png" alt="" />
                                         </div>
                                         <div className='px-4'>
                                             <h1 className='font-bold'>Help Paying for insulin</h1>
@@ -31,6 +33,8 @@ const Tabs = () => {
                                     </div>
                                 </Tab.Panel>
                                 <Tab.Panel>
+                                    <h1 className='font-bold text-xl'>Tab2</h1>
+                                    <div className="divider"></div>
                                     <div className=' bg-white rounded-lg p-4 flex mb-3'>
                                         <div className='m-[auto]'>
                                             <img src="tab2.png" alt="" />
@@ -55,6 +59,8 @@ const Tabs = () => {
                                     </div>
                                 </Tab.Panel>
                                 <Tab.Panel>
+                                    <h1 className='font-bold text-xl'>Tab3</h1>
+                                    <div className="divider"></div>
                                     <div className='bg-white rounded-lg p-4 flex mb-3'>
                                         <div className='m-[auto]'>
                                             <img src="tab3.jpg" alt="" />
