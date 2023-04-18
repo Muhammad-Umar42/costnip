@@ -19,7 +19,7 @@ const Footer = () => {
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Support</li>
                     <li> <Link href="/faq">FAQs</Link> </li>
-                    <li>Partnerships</li>
+                    <li> <Link href="/patnership">Partnerships</Link></li>
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Company</li>

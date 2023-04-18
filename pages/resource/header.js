@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
                 </div>
                 <div className='text-center'>
                     <img className='w-[200px] mx-[auto]' src="resource.png" alt="image" />
-                    <button className='text-2xl bg-[#f8f8f8] px-8 py-3 w-2/4 mt-8'>View All Resources</button>
+                    <button className='text-2xl bg-[#f8f8f8] px-8 py-3 w-2/4 mt-8'> <Link href="/allresources"> View All Resources </Link></button>
                 </div>
             </div>
         </>
