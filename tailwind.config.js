@@ -4,12 +4,12 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './app/**/*.{js,ts,jsx,tsx}',
+    'node_modules/preline/dist/*.js',
   ],
   theme: {
     extend: {
       colors: {
         clr: '#132758',
-
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -18,5 +18,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui")],
-}
+  plugins: [require('daisyui'), require('preline/plugin')],
+};
