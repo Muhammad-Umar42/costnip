@@ -1,8 +1,20 @@
 import React from 'react'
 
-const Form = () => {
+const Contact = () => {
     return (
         <>
+            {/* ////////////head////////////// */}
+            <div className="grid grid-cols-1 md:grid-cols-2 countain py-12">
+                <div className='text-clr m-[auto]'>
+                    <h1 className='font-bold text-2xl w-full max-w-[200px] pb-4'>Drop Us A Line We Love Helping</h1>
+                    <h3 className='w-full max-w-[500px]'> If you have a question about Costnip, chances are you can find the answer in our <span className='text-blue-500 underline'>FAQs</span> section</h3>
+                </div>
+                <div>
+                    <img className='w-[350px]' src="contact.png" alt="image" />
+                </div>
+            </div>
+            {/* ////////////head////////////// */}
+            {/* ////////////form////////////// */}
             <div className='bg-gray-300 py-14'>
                 <div className='w-11/12 max-w-[1300px] mx-[auto]'>
                     <div className='w-8/12 mx-[auto] bg-white p-6 rounded-xl'>
@@ -60,8 +72,9 @@ const Form = () => {
                 </div>
 
             </div>
+            {/* ////////////form////////////// */}
         </>
     )
 }
 
-export default Form
+export default Contact

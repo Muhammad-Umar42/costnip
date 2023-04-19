@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
@@ -8,13 +9,13 @@ const Footer = () => {
             <div className='w-[90%] max-w-[1300px] mx-[auto] grid grid-cols-1 md:grid-cols-4'>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Tools & info</li>
-                    <li>  <Link href='/priceCare'>Pricecare Search</Link></li>
+                    <li>  <Link href='/pricecare'>Pricecare Search</Link></li>
                     <li>Bill Upload</li>
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Discover</li>
                     <li><Link href='/spotlight'>Health Spotlight</Link></li>
-                    <li> <Link href='/resource'> Resource Library</Link></li>
+                    <li> <Link href='/resource-library'> Resource Library</Link></li>
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Support</li>
@@ -31,7 +32,12 @@ const Footer = () => {
 
             <div className='w-[90%] max-w-[1300px] mx-[auto] grid grid-cols-1 md:grid-cols-3 gap-y-4'>
                 <div className='text-center'>
-                    <img className='w-[100px] mx-[auto]' src="costniplogo.png" alt="logo" />
+                    <Image className='m-[auto]'
+                        src="/costniplogo.png"
+                        alt="Picture of the author"
+                        width={150}
+                        height={150}
+                    />
                     <h2 className='text-[#132758]'>Empowering informed Decisions</h2>
                 </div>
                 <div className='text-center'>
