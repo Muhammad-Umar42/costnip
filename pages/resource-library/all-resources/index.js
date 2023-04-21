@@ -20,6 +20,7 @@ const Index = () => {
                         src='/resource.png'
                         width={200}
                         height={300}
+                        alt='image'
                     />
                 </div>
             </div>

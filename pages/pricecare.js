@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
@@ -48,7 +49,8 @@ const Pricecare = () => {
                 <div className='m-[auto]'>
                     <h1 className='text-[#132758] font-semibold text-xl'>How can you help spread</h1>
                     <h1 className='text-[#15A6C2] font-semibold text-xl'>#Pricepparency</h1>
-                    <button className='bg-[#132758] text-white py-1 px-2 rounded-full mt-6 md:mb-0 mb-8'> About our mission</button>
+                    <button className='bg-[#132758] text-white py-1 px-2 rounded-full mt-6 md:mb-0 mb-8'>   <Link href='/about'>About our mission </Link>
+                    </button>
                 </div>
                 <div className='col-span-2 '>
                     <div className='flex items-center' >
@@ -69,7 +71,9 @@ const Pricecare = () => {
                             <h2 className='pl-4'>Submit your story or topic for our blog</h2>
                         </div>
                         <div>
-                            <button className='bg-[#DEEAFD] text-[#132758] p-2 rounded-2xl'>Connect</button>
+                            <button className='bg-[#DEEAFD] text-[#132758] p-2 rounded-2xl'>
+                                <Link href='/contact'> Connect </Link>
+                            </button>
                         </div>
                     </div>
                     <div className='flex items-center'>
@@ -78,7 +82,9 @@ const Pricecare = () => {
                             <h2 className='pl-4'>Report issues with non-transparent helthcare providers</h2>
                         </div>
                         <div className='flex'>
-                            <button className='bg-[#DEEAFD] text-[#132758] p-2 rounded-2xl'>Report</button>
+                            <button className='bg-[#DEEAFD] text-[#132758] p-2 rounded-2xl'>
+                                <Link href='/contact'> Report </Link>
+                            </button>
 
                         </div>
                     </div>

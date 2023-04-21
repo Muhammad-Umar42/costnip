@@ -12,7 +12,7 @@ const About = () => {
                         </div>
                         <div>
                             <h1 className='text-white text-5xl font-semibold'>Empowering Informed Decisions</h1>
-                            <h1 className='text-gray-200 text-xl font-semibold text-right py-4'>Join the #priceparency movement</h1>
+                            <h1 className='text-gray-200 text-xl font-semibold  py-4'>Join the #priceparency movement</h1>
                         </div>
                     </div>
                 </div>

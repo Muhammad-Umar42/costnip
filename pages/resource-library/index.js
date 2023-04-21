@@ -1,13 +1,17 @@
 import DefaultLoading from '@/components/loding';
 import { useFetcher } from '@/helpers/fetch';
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
+import images from '@/components/images';
+// import { useMedia } from '@/helpers/useMedia';
 
 const Index = () => {
 
 
-    const { data, isLoading, error } = useFetcher('/api/resources');
-    // console.log(data, isLoading, error);
+
+    const { data, isLoading, error } = useFetcher('/api/resource-categories');
+    console.log(data);
     if (isLoading) return <DefaultLoading />;
     if (error) return <h1>Error</h1>;
 
@@ -39,14 +43,16 @@ const Index = () => {
                 <h1 className='text-4xl font-bold pb-10'> Resources and Tools </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
                     {
-                        data.data.map((item) => {
+                        data.data.map((item, ind) => {
                             return (
-                                <>
+                                <div key={item.id}>
                                     <div className='flex items-center border-solid border-[2px] border-black p-8 rounded-lg'>
-                                        <img className='w-[40px]' src='report.png' alt="" />
+                                        {/* <img className='w-[40px]' src={useMedia(item.attributes.photoUrl)} alt="" /> */}
+
+                                        <Image width={40} height={40} src={images[ind]} alt="" />
                                         <h1 className='text-xl ml-6'> {item.attributes.name}</h1>
                                     </div>
-                                </>
+                                </div>
                             )
                         })
                     }

@@ -42,7 +42,10 @@ const Footer = () => {
                 </div>
                 <div className='text-center'>
                     <h2 className='text-[#132758]'>Copyright &copy;2023 Costnip, inc</h2>
-                    <h2 className='text-[#132758]'>Terms of Service | Privacy Policy</h2>
+                    <h2 className='text-[#132758]'>
+                        <Link href='/terms-coundiation'> Terms of Service </Link> |
+                        <Link href='/privacy'> Privacy Policy </Link>
+                    </h2>
                 </div>
                 <div className='flex justify-center'>
                     <BsFacebook className='mr-6 text-3xl' />
