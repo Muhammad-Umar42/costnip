@@ -13,7 +13,7 @@ const privacy = () => {
 
     return (
         <>
-            <div className='countain' dangerouslySetInnerHTML={{ __html: data.data.attributes.body }} />
+            <div className='countain py-12' dangerouslySetInnerHTML={{ __html: data.data.attributes.body }} />
         </>
     )
 }

@@ -1,9 +1,18 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
 import Image from 'next/image'
+import DefaultLoading from '@/components/loding';
+import { useFetcher } from '@/helpers/fetch';
 
 
 const Index = () => {
+
+    const { data, isLoading, error } = useFetcher('/api/resource-categories');
+    // console.log(data);
+    if (isLoading) return <DefaultLoading />;
+    if (error) return <h1>Error</h1>;
+
+
     return (
         <>
             {/* ////////////////head/////////// */}
@@ -32,7 +41,16 @@ const Index = () => {
                     <Tab.Group>
                         <div className="grid grid-cols-3 ">
                             <Tab.List>
-                                <Tab className='block outline-0 mb-2'>Tab 1</Tab>
+                                {
+                                    data?.data?.map((item) => {
+                                        return (
+                                            <div>
+                                                <Tab className='block outline-0 mb-3'>{item.attributes.name}</Tab>
+                                            </div>
+                                        )
+                                    })
+                                }
+
 
                             </Tab.List>
                             <Tab.Panels className='col-span-2'>
