@@ -8,31 +8,17 @@ const Index = () => {
 
     const { data: spotLightHead, isLoading, error } = useFetcher('/api/health-spootlight-header?populate=*');
     const { data: spotlightcard, isLooading, erroor } = useFetcher('/api/blogs?populate=*');
-    // console.log('spotlightcard: ', spotlightcard);
     const { data: spotlighttopic, isLoooading, errooor } = useFetcher('/api/topics?populate=*');
-    // console.log('spotlighttopic: ', spotlighttopic);
-    // const topic = spotlighttopic?.data
-    // console.log('topicapi: ', topic);
+
+    if (isLoading || isLooading || isLoooading) return <DefaultLoading />;
 
     if (spotlightcard === undefined || spotlighttopic === undefined) return
     const allData = [...spotlightcard?.data, ...spotlighttopic?.data]
-    // console.log('allData: ', allData);
-    // console.log('spotlightcard: ', spotlightcard);
 
-    // console.log(spotLightHead);
 
     const base = spotLightHead?.data?.attributes
-    // console.log('basee: ', basee);
-    if (isLoading) return <DefaultLoading />;
-    if (error) return <h1>Error</h1>;
 
-
-    // const { data: spotlightcard, isLooading, erroor } = useFetcher('/api/blogs?populate=*');
-    // const basee = spotlightcard?.data?.attributes
-    // // console.log(data);
-    // if (isLooading) return <DefaultLoading />;
-    // if (erroor) return <h1>Error</h1>;
-
+    if (error || errooor || erroor) return <h1>Error</h1>;
 
     return (
         <>
@@ -92,8 +78,6 @@ const Index = () => {
                                     {
                                         allData?.map((item) => {
 
-
-                                            // console.log('item: ', item.attributes.thumbnail);
                                             return (
                                                 <div key={item.id} className='shadow-lg p-4'>
                                                     <img
