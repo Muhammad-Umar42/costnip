@@ -1,18 +1,37 @@
 import React from 'react'
-import Link from 'next/link'
 import DefaultLoading from '@/components/loding';
 import { useFetcher } from '@/helpers/fetch';
 import { useMedia } from '@/helpers/useMedia';
-import { useAmp } from 'next/amp';
+import { Tab } from '@headlessui/react';
 
 const Index = () => {
 
     const { data: spotLightHead, isLoading, error } = useFetcher('/api/health-spootlight-header?populate=*');
+    const { data: spotlightcard, isLooading, erroor } = useFetcher('/api/blogs?populate=*');
+    // console.log('spotlightcard: ', spotlightcard);
+    const { data: spotlighttopic, isLoooading, errooor } = useFetcher('/api/topics?populate=*');
+    // console.log('spotlighttopic: ', spotlighttopic);
+    // const topic = spotlighttopic?.data
+    // console.log('topicapi: ', topic);
+
+    if (spotlightcard === undefined || spotlighttopic === undefined) return
+    const allData = [...spotlightcard?.data, ...spotlighttopic?.data]
+    // console.log('allData: ', allData);
+    // console.log('spotlightcard: ', spotlightcard);
+
     // console.log(spotLightHead);
 
     const base = spotLightHead?.data?.attributes
+    // console.log('basee: ', basee);
     if (isLoading) return <DefaultLoading />;
     if (error) return <h1>Error</h1>;
+
+
+    // const { data: spotlightcard, isLooading, erroor } = useFetcher('/api/blogs?populate=*');
+    // const basee = spotlightcard?.data?.attributes
+    // // console.log(data);
+    // if (isLooading) return <DefaultLoading />;
+    // if (erroor) return <h1>Error</h1>;
 
 
     return (
@@ -42,72 +61,88 @@ const Index = () => {
                 </div>
             </div>
             {/* ///////////head/////// */}
-            {/* ///////////insight/////// */}
-            <div className='countain'>
-                <div className='clr flex items-baseline py-8'>
-                    <h1 className='text-2xl font-semibold'>Costnip Insight</h1>
-                    <h1 className='text-sm ml-4'> <Link href="/spotlight/all-sportlight"> View All </Link></h1>
+            {/* ///////////////tabs///////////// */}
+            <div className='countain grid grid-cols-1 md:grid-cols-4 gap-x-8 pb-12'>
+
+                <div className='col-span-3'>
+                    <Tab.Group>
+                        <div className='flex border-b pt-6 pb-3 mb-4 border-solid'>
+                            <Tab.List>
+                                <Tab className='pr-8 font-bold outline-0'> All </Tab>
+                            </Tab.List>
+                            <Tab.List>
+                                <Tab className='pr-8 font-bold outline-0'> News </Tab>
+                            </Tab.List>
+                            <Tab.List>
+                                <Tab className='pr-8 font-bold outline-0'> Disease </Tab>
+                            </Tab.List>
+                            <Tab.List>
+                                <Tab className='pr-8 font-bold outline-0'> Topics </Tab>
+                            </Tab.List>
+                            <Tab.List>
+                                <Tab className='pr-8 font-bold outline-0'> Forum </Tab>
+                            </Tab.List>
+                        </div>
+
+
+                        <Tab.Panels>
+                            <Tab.Panel>
+                                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+
+                                    {
+                                        allData?.map((item) => {
+
+
+                                            // console.log('item: ', item.attributes.thumbnail);
+                                            return (
+                                                <div key={item.id} className='shadow-lg p-4'>
+                                                    <img
+                                                        alt="Office"
+                                                        src={useMedia(item?.attributes?.thumbnail ? item?.attributes?.thumbnail : item?.attributes?.image)}
+                                                        className="h-56 w-full object-cover shadow-lg"
+                                                    />
+                                                    <h1 className='font-bold py-3'>
+                                                        {item?.attributes?.title ? item?.attributes?.title : item?.attributes?.lifetime_cost}
+                                                    </h1>
+                                                    <h1 className=' pb-3'>Lorem ipsum dolor sit amen consectetur adipisicing elite. Impeding explicabo a nihil asperities quadrat perspiciatis nostrum venial alias repellant qui?</h1>
+                                                    <button className='pb-2 bg-green-400 font-semibold rounded-md p-1.5 mb-2'>Read full article</button>
+                                                    <h6>Written by Care Rosenbloom</h6>
+                                                </div>
+                                            )
+                                        })
+                                    }
+
+
+                                </div>
+                            </Tab.Panel>
+                            <Tab.Panel>i am fine</Tab.Panel>
+                        </Tab.Panels>
+                    </Tab.Group>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-                    {/* ???????????First--CARD//////// START*/}
-                    <div>
-                        {/* <!--
-  Heads up! 👋
+                {/* ///////////////sidebar////////////////////// */}
 
-  This component comes with some `rtl` classNamees. Please remove them they are not needed in your project.
---> */}
 
-                        <article className="overflow-hidden rounded-lg border border-gray-100 shadow-sm">
-                            <img
-                                alt="Office"
-                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                className="h-56 w-full object-cover"
-                            />
+                <div className='bg-gray-100 text-center mt-8 p-4'>
+                    <h1 className='text-gray-500 font-bold '>Recently Published</h1>
+                    <div className='bg-white p-2 mt-4 border-l-4 border-solid border-blue-300 rounded-lg'>
+                        <h1 className='text-left font-semibold'>Lorem ipsum dolor sit, amet tetur adipisicing elit.</h1>
+                        <div className='flex justify-between text-gray-400'>
+                            <h6>John Doe</h6>
+                            <div className='flex justify-between'>
 
-                            <div className="p-4 sm:p-6">
-                                <a href="#">
-                                    <h3 className="text-lg font-medium text-gray-900">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    </h3>
-                                </a>
-
-                                <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                                    dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-                                    sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-                                    voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-                                    Molestias explicabo corporis voluptatem?
-                                </p>
-
-                                <a
-                                    href="#"
-                                    className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"
-                                >
-                                    Find out more
-
-                                    <span
-                                        aria-hidden="true"
-                                        className="block transition-all group-hover:ms-0.5 rtl:rotate-180"
-                                    >
-                                        &rarr;
-                                    </span>
-                                </a>
+                                <h6>May, 12, 2023</h6>
+                                <h6> 12:44</h6>
                             </div>
-                        </article>
-
+                        </div>
                     </div>
-                    {/* ???????????First--CARD////////  END */}
+                </div>
 
-                </div>
-                <div className='clr flex items-baseline py-12'>
-                    <h1 className='text-2xl font-semibold'>Health Topics</h1>
-                    <h1 className='text-sm ml-4'>
-                        <Link href='/spotlight/health-topic'> View All </Link>
-                    </h1>
-                </div>
+
+                {/* ///////////////sidebar////////////////////// */}
+
             </div>
-            {/* ///////////insight/////// */}
+            {/* ///////////////tabs///////////// */}
         </>
     )
 }

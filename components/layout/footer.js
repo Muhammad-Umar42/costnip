@@ -10,7 +10,7 @@ const Footer = () => {
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Tools & info</li>
                     <li>  <Link href='/pricecare'>Pricecare Search</Link></li>
-                    <li>Bill Upload</li>
+                    <li> <Link href='/billupload'> Bill Upload </Link></li>
                 </ul>
                 <ul className='text-[#132758]'>
                     <li className='font-bold pb-4'>Discover</li>
