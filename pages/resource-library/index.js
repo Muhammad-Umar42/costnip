@@ -47,8 +47,9 @@ const Index = () => {
                             return (
                                 <div key={item.id}>
                                     <div className='flex items-center border-solid border-[2px] border-black p-8 rounded-lg'>
+
                                         <Image width={40} height={40} src={images[ind]} alt="" />
-                                        <h1 className='text-xl ml-6'> {item.attributes.name}</h1>
+                                        <Link href="/resource-library/all-resources"><h1 className='text-xl ml-6'> {item.attributes.name}</h1></Link>
                                     </div>
                                 </div>
                             )

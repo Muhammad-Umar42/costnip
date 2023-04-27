@@ -92,7 +92,7 @@ const Navbar = () => {
                             </div>
                             <Link
                                 className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500"
-                                href="#"
+                                href="/signin"
                             >
 
                                 Sign in
@@ -112,5 +112,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-//how to use routing?   
