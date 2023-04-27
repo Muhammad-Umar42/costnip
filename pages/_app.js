@@ -3,6 +3,10 @@ import Navbar from '@/components/layout/navbar';
 import '@/styles/globals.css';
 import { useEffect } from 'react';
 import { SWRConfig } from 'swr';
+import { Poppins } from 'next/font/google';
+
+// If loading a variable font, you don't need to specify the font weight
+const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600'] });
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -19,9 +23,11 @@ export default function App({ Component, pageProps }) {
             fetch(`${baseUrl}${resource}`, init).then((res) => res.json()),
         }}
       >
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
+        <div className={poppins.className}>
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
       </SWRConfig>
     </>
   );
