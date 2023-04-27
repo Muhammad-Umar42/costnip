@@ -67,11 +67,15 @@ const Index = () => {
 
                             <Tab.Panels className='col-span-2'>
                                 <Tab.Panel className=''>
+                                    <h1 className='text-xl font-bold'>
+
+                                        All
+                                    </h1>
+                                    <div className="divider"></div>
                                     {rdata.data.map((item) => (
                                         <div>
-                                            <div className='divider'></div>
-                                            <div className='block p-4 mb-3 bg-white rounded-lg md:flex'>
-                                                <div className='m-[auto]'>
+                                            <div className='block p-4 mb-8 shadow-lg bg-white rounded-lg md:flex'>
+                                                <div className='basis-full max-w-[100px] my-[auto]'>
                                                     <img
                                                         src={useMedia(item.attributes.photoUrl)}
                                                         alt='Picture of the author'
@@ -81,8 +85,7 @@ const Index = () => {
                                                 </div>
                                                 <div className='px-4'>
                                                     <h1 className='font-bold'>{item.attributes.name}</h1>
-                                                    <div className='divider'></div>
-                                                    <h1
+                                                    <h1 className='text-sm'
                                                         dangerouslySetInnerHTML={{
                                                             __html: item.attributes.description,
                                                         }}
@@ -100,33 +103,32 @@ const Index = () => {
                                         <div>
                                             <Tab.Panel className=''>
                                                 <h1 className='text-xl font-bold'>
-                                                    {' '}
+
                                                     {item.attributes.name}{' '}
                                                 </h1>
+                                                <div className='divider'></div>
                                                 {item.attributes.resources.data.map((tabData) => {
                                                     return (
                                                         <div>
-                                                            <div className='divider'></div>
-                                                            <div className='block p-4 mb-3 bg-white rounded-lg md:flex'>
-                                                                <div className='m-[auto]'>
-                                                                    <img
+
+                                                            <div className='block p-4 mb-8 shadow-lg bg-white rounded-lg md:flex'>
+                                                                <div className='basis-full max-w-[100px] my-[auto]'>
+                                                                    <img className='w-20  '
                                                                         src={useMedia(tabData.attributes.photoUrl)}
                                                                         alt='Picture of the author'
-                                                                        width={150}
-                                                                        height={150}
+
                                                                     />
                                                                 </div>
-                                                                <div className='px-4'>
+                                                                <div className='px-4 basis-full'>
                                                                     <h1 className='font-bold'>
                                                                         {tabData.attributes.name}
                                                                     </h1>
-                                                                    <div className='divider'></div>
-                                                                    <h1
+                                                                    <h1 className='text-sm'
                                                                         dangerouslySetInnerHTML={{
                                                                             __html: tabData.attributes.description,
                                                                         }}
                                                                     ></h1>
-                                                                    <h6 className='font-bold text-blue-600'>
+                                                                    <h6 className='font-bold text-blue-600 pt-3' >
                                                                         Learn more
                                                                     </h6>
                                                                 </div>
@@ -150,4 +152,3 @@ const Index = () => {
 };
 
 export default Index;
-Footer

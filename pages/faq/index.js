@@ -3,7 +3,7 @@ import { useFetcher } from '@/helpers/fetch';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import DefaultLoading from '@/components/loding';
-import { Transition } from '@headlessui/react';
+// import { Transition } from '@headlessui/react';
 
 const Index = () => {
   const { data, isLoading, error } = useFetcher('/api/faqs');
@@ -67,4 +67,3 @@ const Index = () => {
 };
 
 export default Index;
-Footer
