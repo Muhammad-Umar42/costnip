@@ -9,10 +9,15 @@ const Index = () => {
   const { data, isLoading, error } = useFetcher(
     '/api/resource-categories?populate[resources][populate][0]=photoUrl'
   );
+  const {
+    data: rdata,
+    isLoading: rloading,
+    error: rerror,
+  } = useFetcher('/api/resources?populate=*');
 
   // console.log(data);
-  if (isLoading) return <DefaultLoading />;
-  if (error) return <h1>Error</h1>;
+  if (isLoading || rloading) return <DefaultLoading />;
+  if (error || rloading) return <h1>Error</h1>;
 
   return (
     <>
@@ -48,6 +53,7 @@ const Index = () => {
           <Tab.Group>
             <div className='grid grid-cols-3 '>
               <Tab.List>
+                <Tab className='block mb-3 outline-0'>All</Tab>
                 {data.data.map((item) => {
                   return (
                     <div>
@@ -58,7 +64,37 @@ const Index = () => {
                   );
                 })}
               </Tab.List>
+
               <Tab.Panels className='col-span-2'>
+                <Tab.Panel className=''>
+                  {rdata.data.map((item) => (
+                    <div>
+                      <div className='divider'></div>
+                      <div className='block p-4 mb-3 bg-white rounded-lg md:flex'>
+                        <div className='m-[auto]'>
+                          <img
+                            src={useMedia(item.attributes.photoUrl)}
+                            alt='Picture of the author'
+                            width={150}
+                            height={150}
+                          />
+                        </div>
+                        <div className='px-4'>
+                          <h1 className='font-bold'>{item.attributes.name}</h1>
+                          <div className='divider'></div>
+                          <h1
+                            dangerouslySetInnerHTML={{
+                              __html: item.attributes.description,
+                            }}
+                          ></h1>
+                          <h6 className='font-bold text-blue-600'>
+                            Learn more
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </Tab.Panel>
                 {data.data.map((item) => {
                   return (
                     <div>
