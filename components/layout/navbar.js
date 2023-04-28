@@ -1,38 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Transition, Dialog } from '@headlessui/react';
+import Auth from '@/components/authModal';
+import { getCookie } from 'cookies-next';
 
 const Navbar = () => {
+  let [isOpen, setIsOpen] = useState(false);
+  let [loggedIn, setLoggedIn] = useState(getCookie('user'));
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  useEffect(() => {
+    if (loggedIn) {
+      setLoggedIn(JSON.parse(loggedIn));
+    }
+  }, []);
+
   return (
     <>
-      {/* <div className="navbar bg-base-100">
-                <div className='w-[90%] max-w-[1300px] mx-[auto]'>
-                    <div className="flex-1" >
-                        <Link href="/Homepage">
-                            <Image
-                                src="/costniplogo.png"
-                                alt="Picture of the author"
-                                width={150}
-                                height={150}
-                            />
-                        </Link>
-                    </div>
-                    <div className="flex-none">
-                        <ul className="px-1 menu menu-horizontal">
-                            <li>
-                                <Link href='/pricecare'>Pricecare Search</Link>
-                            </li>
-                            <li>
-                                <Link href='/spotlight'>Health Spotlight</Link>
-                            </li>
-                            <li>
-                                <Link href='#'>Sign in</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> */}
-
+      <Auth isOpen={isOpen} closeModal={closeModal} />
       <div className='bg-white border-b border-gray-200'>
         <header className='z-50 flex flex-wrap w-11/12 py-5 text-sm countain sm:justify-start sm:flex-nowrap sm:py-3 '>
           <nav
@@ -96,12 +89,22 @@ const Navbar = () => {
                 </h1>
 
                 <div className='hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4'></div>
-                <Link
-                  className='flex items-center font-medium text-gray-500 gap-x-2 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500'
-                  href='/signin'
-                >
-                  Sign in
-                </Link>
+                {loggedIn?.user !== undefined ? (
+                  <Link
+                    className='flex items-center font-medium text-gray-500 gap-x-2 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500'
+                    href='#'
+                  >
+                    {loggedIn.user.username}
+                  </Link>
+                ) : (
+                  <Link
+                    className='flex items-center font-medium text-gray-500 gap-x-2 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500'
+                    href='#'
+                    onClick={openModal}
+                  >
+                    Sign in
+                  </Link>
+                )}
               </div>
             </div>
           </nav>
