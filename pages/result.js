@@ -1,55 +1,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Hero from '@/components/result/hero';
-import axios from 'axios';
 
 const result = () => {
-  const [message, setMessage] = useState('what is web?');
-  const [response, setResponse] = useState('');
-
-  const handleChange = (e) => {
-    setMessage(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer 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`,
-      },
-    };
-
-    const payload = {
-      model: 'text-davinci-002',
-      prompt: `Chatbot, ${message}`,
-      temperature: 0.7,
-      max_tokens: 150,
-    };
-
-    try {
-      const res = await axios.post(
-        'https://api.openai.com/v1/completions',
-        payload,
-        config
-      );
-      console.log(res, 'res');
-      const chatbotResponse = res.data.choices[0].text;
-      setResponse(chatbotResponse);
-    } catch (error) {
-      console.error(error);
-      setResponse('An error occurred while fetching the response.');
-    }
-  };
-
   return (
     <>
-      <button className='btn' onClick={handleSubmit}>
-        {' '}
-        Chat
-      </button>
+      <button className='btn'> Chat</button>
       <Hero />
     </>
   );
