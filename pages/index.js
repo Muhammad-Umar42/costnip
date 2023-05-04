@@ -1,11 +1,13 @@
 import React from 'react';
 import Index from '../components/Homepage';
 import Chat from '@/components/chatgpt/chat';
+import ImageEditor from '@/components/image-editor';
 
 const Home = () => {
   return (
     <>
-      <Chat />
+      <ImageEditor />
+
       <Index />
     </>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ChatModel from '../chatgpt/modal';
 const Index = () => {
   return (
     <>
@@ -109,14 +109,7 @@ const Index = () => {
           </h1>
         </div>
         <div className='flex items-center'>
-          <input type='checkbox' id='show' />
-          <label htmlFor='show'>
-            <input
-              className='bg-blue-200 py-7 outline-0  px-3 w-[300px]'
-              type='text'
-              placeholder='Ask any health question here...'
-            />
-          </label>
+          <ChatModel />
         </div>
       </div>
       {/* <Chatbox /> */}
