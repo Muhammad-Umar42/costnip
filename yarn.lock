@@ -746,6 +746,7 @@ __metadata:
     preline: ^1.8.0
     react: 18.2.0
     react-canvas-draw: ^1.2.1
+    react-colorful: ^5.6.1
     react-dom: 18.2.0
     react-icons: ^4.8.0
     swr: ^2.1.3
@@ -1880,6 +1881,16 @@ __metadata:
   peerDependencies:
     react: 16.x || 17.x
   checksum: cfdc539704ea40c91818b76861903eabe4d00f400ade06bfe62b4005b45f8daaff53589512a32773377e2ca7e614ca9906bf3bb4db9f5d2bca0ae56a92a5befb
+  languageName: node
+  linkType: hard
+
+"react-colorful@npm:^5.6.1":
+  version: 5.6.1
+  resolution: "react-colorful@npm:5.6.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: e432b7cb0df57e8f0bcdc3b012d2e93fcbcb6092c9e0f85654788d5ebfc4442536d8cc35b2418061ba3c4afb8b7788cc101c606d86a1732407921de7a9244c8d
   languageName: node
   linkType: hard
 
