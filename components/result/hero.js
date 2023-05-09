@@ -1,4 +1,5 @@
 import React from 'react';
+import Combo from './combo';
 
 const Hero = () => {
   return (
@@ -13,6 +14,7 @@ const Hero = () => {
               Compare and share prices facilities have charged in the past. See
               what others were charged and make informed decisions!
             </p>
+            <Combo />
           </div>
           <div className='col-span-4 lg:col-span-5'>
             <img src='result.png' alt='' />

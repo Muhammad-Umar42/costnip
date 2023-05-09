@@ -5,7 +5,6 @@ import Hero from '@/components/result/hero';
 const result = () => {
   return (
     <>
-      <button className='btn'> Chat</button>
       <Hero />
     </>
   );

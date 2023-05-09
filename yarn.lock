@@ -107,6 +107,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/tailwindcss@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "@headlessui/tailwindcss@npm:0.1.3"
+  peerDependencies:
+    tailwindcss: ^3.0
+  checksum: 65a2cfdf8560d83824fa8d350ea9799b95bc79aefa7c20b4be7c73cd285de8d3d652b26f2cfdb82d225d8d922e28ca898179bdaf6a0f7b88408e6ad831808959
+  languageName: node
+  linkType: hard
+
 "@heroicons/react@npm:^2.0.17":
   version: 2.0.17
   resolution: "@heroicons/react@npm:2.0.17"
@@ -733,6 +742,7 @@ __metadata:
   dependencies:
     "@egjs/react-flicking": ^4.10.9
     "@headlessui/react": ^1.7.14
+    "@headlessui/tailwindcss": ^0.1.3
     "@heroicons/react": ^2.0.17
     "@types/node": 18.16.2
     "@types/react": 18.2.0

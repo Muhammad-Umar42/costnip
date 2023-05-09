@@ -18,5 +18,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('daisyui'), require('preline/plugin')],
+  plugins: [
+    require('daisyui'),
+    require('preline/plugin'),
+    require('@headlessui/tailwindcss')({ prefix: 'ui' }),
+  ],
 };
